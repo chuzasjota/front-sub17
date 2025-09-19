@@ -1,0 +1,11 @@
+{
+    "configurations": [
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Backend",
+            "program": "${workspaceFolder}/backend/index.js"
+        }
+    ]
+}
