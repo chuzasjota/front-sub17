@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h3 {
+    color: #224451;
+    font-size: 3rem;
+}
+
+header {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 50%;
+  overflow: hidden;
+  transform: translateX(-50%);
+  border-radius: 25px 4px;
+  padding: 11px 15px;
+  width: 90%;
+  max-width: 1140px;
+  display: inline-block;
+  backdrop-filter: blur(18px);
+  /* background: rgba(255, 255, 255, 0.4); */
+}
+header .btn-primary {
+  padding: 8px 24px;
+  background: black;
+  border-color: black;
+  color: white;
+}
+header .btn-primary:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    color: #007bff;
+}
+header .navbar-expand-lg .logo img {
+    width: 35%;
+}
+header .navbar-expand-lg .navbar-nav a.nav-link {
+  font-size: 18px;
+  padding-right: 28px;
+  color: white;
+}
+
+@media screen and (min-width: 1700px) {
+  header {
+    padding: 11px 35px;
+    width: 100%;
+    max-width: 1580px;
+  }
+  header nav .navbar-brand {
+    margin-right: 67px;
+  }
+}
+
+.banner {
+  max-height: 950px;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.banner img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .banner {
+    height: auto;
+  }
+  .banner .text-banner {
+    width: 100%;
+    text-align: left;
+    padding: 0 30px;
+  }
+}
+
+.text-banner {
+  max-width: 770px;
+  position: absolute;
+  top: calc(50% + 60px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.text-banner p {
+  padding: 39px 0;
+  font-size: 1.7rem;
+}
+.text-banner h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -3.2px;
+  line-height: clamp(40px, 5vw, 72px);
+}
+
+.btn-banner {
+    background-color: black;
+    border-color: black;
+}
+
+.values {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.values .card {
+    background-color: #224451;
+    color: white;
+    align-items: center;
+    border-radius: 30px;
+}
+.values .card i {
+    font-size: 4rem;
+}
+.values .card h3 {
+    font-size: 1.7rem;
+    color: white;
+}
+.choose-us aside {
+    margin-bottom: 5rem;
+}
+
+.choose-us aside p {
+    font-size: 2rem;
+}
+
+.services {
+    margin-bottom: 5rem;
+}
+
+.services .card img {
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.services .card a.btn-services {
+    background-color: black;
+    color: white;
+}
+.services .card a.btn-services:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    color: #007bff;
+}
+.pre-footer .row:first-child {
+    background-color: #224451;
+    padding: 3rem;
+    border-radius: 30px;
+    color: white;
+}
+.pre-footer .row:first-child i {
+    font-size: 5rem;
+}
+.pre-footer .row:first-child h4 {
+    font-size: 3rem;
+}
+.pre-footer .row:last-child p{
+    font-size: 3rem;
+    color: #6AD43F;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+/*FOOTER*/
+footer {
+  background: #68868d;
+  color: #fff;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links div {
+  margin: 10px;
+}
+
+.footer-links h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  display: block;
+  color: #bbb;
+  margin: 3px 0;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social img:hover {
+  transform: scale(1.1);
+}
