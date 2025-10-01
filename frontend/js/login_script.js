@@ -8,7 +8,7 @@ function submit() {
     emailErrorElement.classList.add("d-none");
     if (passwordElement.value == "clave123") {
       passwordErrorElement.classList.add("d-none");
-      window.location.href = "./html/success.html";
+      window.location.href = "success.html";
     } else {
       passwordErrorElement.classList.remove("d-none");
     }
