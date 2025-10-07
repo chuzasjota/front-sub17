@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/login_style.css" />
+    <script src="./js/login_script.js"></script>
+    <title>Login - Softexpert</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <header>
+        <div class="logo"></div>
+        <div class="menu-container">
+          <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Servicios</a>
+          </nav>
+          <a href="contacto.html" class="login-btn">Contacto</a>
+        </div>
+      </header>
+
+      <!-- Main -->
+      <div class="main">
+        <div class="image-placeholder"></div>
+
+        <div class="login-section">
+          <span class="login-title">INICIAR SESIÓN</span>
+          <div class="login-box">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Value" />
+            <p id="emailError" class="error d-none">Correo no encontrado.</p>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="Value" />
+            <p id="passwordError" class="error d-none">Clave incorrecta.</p>
+            <button type="submit" onclick="submit()">Sign In</button>
+            <a href="#">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        <div class="footer-left">
+          <p>Nombre del sitio</p>
+          <div class="social-icons">
+            <div class="icon-placeholder">
+              <i class="fa-brands fa-facebook"></i>
+            </div>
+            <div class="icon-placeholder">
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <div class="icon-placeholder">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="icon-placeholder">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <strong>Tema</strong>
+            <p>Página</p>
+            <p>Página</p>
+            <p>Página</p>
+          </div>
+          <div class="footer-column">
+            <strong>Tema</strong>
+            <p>Página</p>
+            <p>Página</p>
+            <p>Página</p>
+          </div>
+          <div class="footer-column">
+            <strong>Tema</strong>
+            <p>Página</p>
+            <p>Página</p>
+            <p>Página</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
