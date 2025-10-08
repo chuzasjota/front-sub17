@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2025 a las 03:18:47
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: localhost:8889
+-- Generation Time: Oct 08, 2025 at 02:31 AM
+-- Server version: 5.7.39
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,98 +18,129 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_softexpert`
+-- Database: `db_softexpert`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `servicios`
+-- Table structure for table `contactos`
+--
+
+CREATE TABLE `contactos` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `telefono` varchar(100) DEFAULT NULL,
+  `empresa` varchar(255) DEFAULT NULL,
+  `mensaje` text NOT NULL,
+  `creado` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contactos`
+--
+
+INSERT INTO `contactos` (`id`, `nombre`, `email`, `telefono`, `empresa`, `mensaje`, `creado`) VALUES
+(1, 'Jhonatan Vanegas', 'chuzas.j@gmail.com', '4448158210', 'Test company', 'Test message', '2025-10-07 20:17:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `servicios`
 --
 
 CREATE TABLE `servicios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL,
-  `descripcion` text DEFAULT NULL,
-  `precio` decimal(10,2) DEFAULT 0.00,
-  `activo` tinyint(1) DEFAULT 1,
-  `creado` timestamp NOT NULL DEFAULT current_timestamp(),
-  `actualizado` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `descripcion` text,
+  `precio` decimal(10,2) DEFAULT '0.00',
+  `activo` tinyint(1) DEFAULT '1',
+  `creado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `actualizado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `servicios`
+-- Dumping data for table `servicios`
 --
 
 INSERT INTO `servicios` (`id`, `nombre`, `descripcion`, `precio`, `activo`, `creado`, `actualizado`) VALUES
-(1, 'Soporte técnico', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(2, 'Desarrollo de páginas web', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(3, 'Aplicaciones móviles', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(4, 'Pruebas de seguridad', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(5, 'Data testing', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(6, 'Migración a la nube', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(7, 'Diseño UX/UI', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(8, 'Almacenamiento seguro', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(9, 'Mantenimiento de servidores', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
-(10, 'Implementación de IA', NULL, 0.00, 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58');
+(1, 'Soporte técnico', 'Atención especializada para resolver fallas en equipos de cómputo, instalación de software, configuración de dispositivos y asistencia remota o presencial según la necesidad.', '299.00', 1, '2025-09-06 04:24:58', '2025-09-29 03:02:50'),
+(2, 'Desarrollo de páginas web', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
+(3, 'Aplicaciones móviles', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
+(4, 'Pruebas de seguridad', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
+(5, 'Data testing', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
+(6, 'Migración a la nube', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
+(7, 'Diseño UX/UI', 'Diseñamos interfaces modernas, intuitivas y atractivas que ofrecen una experiencia de usuario sencilla y agradable en cualquier dispositivo.', '299.00', 1, '2025-09-06 04:24:58', '2025-10-08 02:14:00'),
+(8, 'Almacenamiento seguro', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
+(9, 'Mantenimiento de servidores', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58'),
+(10, 'Implementación de IA', NULL, '0.00', 1, '2025-09-06 04:24:58', '2025-09-06 04:24:58');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `correo` varchar(255) NOT NULL,
-  `contraseña` varchar(255) NOT NULL,
-  `activo` tinyint(1) DEFAULT 1,
-  `creado` timestamp NOT NULL DEFAULT current_timestamp(),
-  `actualizado` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `rol` enum('admin','usuario','moderador') DEFAULT 'usuario'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nombre` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `creado` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contraseña`, `activo`, `creado`, `actualizado`, `rol`) VALUES
-(2, 'Alanis Gallo', 'agallol@poligran.edu.co', '$2y$10$giS1BlqZOys3.SYlNme9puKgigcmvBX5ELb1zKrh.ak9V2oD4boCS', 1, '2025-09-06 04:40:08', '2025-09-06 04:40:08', 'usuario'),
-(3, 'Marta Cecilia', 'marta@gmail.com', '$2y$10$3rI0rAwQ3DoV1NcpY5U9Y.SERiDZD7Yp036d/.nLScMY5Ufa8twBG', 1, '2025-09-06 04:43:44', '2025-09-06 04:43:44', 'usuario');
+INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`, `creado`) VALUES
+(1, 'Admin', 'admin@example.com', '$2b$10$.ihEeElNCA9VYvzIThjO4uhYAHZQf6Cex/trNiFWvfSA2QVBLmWLK', '2025-10-07 19:50:27');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `servicios`
+-- Indexes for table `contactos`
+--
+ALTER TABLE `contactos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `servicios`
 --
 ALTER TABLE `servicios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `correo` (`correo`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `servicios`
+-- AUTO_INCREMENT for table `contactos`
+--
+ALTER TABLE `contactos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `servicios`
 --
 ALTER TABLE `servicios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
