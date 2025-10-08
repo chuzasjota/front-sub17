@@ -7,8 +7,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="./css/login_style.css" />
-    <script src="./js/login_script.js"></script>
+    <link rel="stylesheet" href="./css/login_style.css" />    
     <title>Login - Softexpert</title>
   </head>
   <body>
@@ -33,14 +32,12 @@
         <div class="login-section">
           <span class="login-title">INICIAR SESIÓN</span>
           <div class="login-box">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="Value" />
-            <p id="emailError" class="error d-none">Correo no encontrado.</p>
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="Value" />
-            <p id="passwordError" class="error d-none">Clave incorrecta.</p>
-            <button type="submit" onclick="submit()">Sign In</button>
-            <a href="#">Forgot password?</a>
+            <form id="loginForm">
+              <input type="email" id="email" placeholder="Email" required>
+              <input type="password" id="password" placeholder="Contraseña" required>
+              <button type="submit">Entrar</button>
+            </form>
+            <div id="loginMessage" class="error"></div>
           </div>
         </div>
       </div>
@@ -87,5 +84,6 @@
         </div>
       </footer>
     </div>
+    <script src="./js/login.js"></script>
   </body>
 </html>

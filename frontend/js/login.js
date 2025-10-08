@@ -18,7 +18,7 @@ if (form) {
         if (json.token) {
           localStorage.setItem('token', json.token);
         }
-        window.location.href = './index.html';
+        window.location.href = './../admin/index.html';
       } else {
         msg.textContent = json.message || 'Credenciales inválidas';
       }
